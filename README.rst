@@ -1,10 +1,12 @@
 kubeRobot
 ===============
 
+
+.. image::https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png
+
 .. contents::
    :local:
 
-.. image::https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png
 
 test kubernetes api by robot
 
@@ -16,7 +18,7 @@ http://robotframework.org/
 first testcase
 --------------
 
-.. code:kubeRobot
+.. code::kubeRobot
 	# robot kuberobot.robot
 	==============================================================================
 	Kuberobot :: REST kubernetes.
