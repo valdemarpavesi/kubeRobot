@@ -40,5 +40,5 @@ Reports
 -------
 
 
-- `Docs
-  <https://github.com/valdemarpavesi/kubeRobot/blob/master/report/report.html>`_
+- `first report
+  <https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
