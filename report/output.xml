@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.2 (Python 3.6.2 on linux)" generated="20171114 15:39:20.971">
+<robot generator="Robot 3.0.2 (Python 3.6.2 on linux)" generated="20171114 16:01:07.608">
 <suite id="s1" name="Kuberobot" source="/home/kuberobot/kuberobot.robot">
 <test id="s1-t1" name="Test api v1 configmaps">
 <kw name="Create Session" library="RequestsLibrary">
@@ -8,8 +8,8 @@
 <arg>kubernetes</arg>
 <arg>127.0.0.1:8080</arg>
 </arguments>
-<msg timestamp="20171114 15:39:21.189" level="INFO">Creating Session using : alias=kubernetes, url=127.0.0.1:8080, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20171114 15:39:21.189" endtime="20171114 15:39:21.190"></status>
+<msg timestamp="20171114 16:01:07.823" level="INFO">Creating Session using : alias=kubernetes, url=127.0.0.1:8080, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20171114 16:01:07.823" endtime="20171114 16:01:07.824"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -20,19 +20,19 @@
 <assign>
 <var>${resp}</var>
 </assign>
-<msg timestamp="20171114 15:39:21.195" level="FAIL">InvalidSchema: No connection adapters were found for '127.0.0.1:8080/api/v1/configmaps'</msg>
-<status status="FAIL" starttime="20171114 15:39:21.190" endtime="20171114 15:39:21.195"></status>
+<msg timestamp="20171114 16:01:07.828" level="FAIL">InvalidSchema: No connection adapters were found for '127.0.0.1:8080/api/v1/configmaps'</msg>
+<status status="FAIL" starttime="20171114 16:01:07.824" endtime="20171114 16:01:07.828"></status>
 </kw>
 <doc>configmaps</doc>
-<status status="FAIL" starttime="20171114 15:39:21.188" endtime="20171114 15:39:21.196" critical="yes">InvalidSchema: No connection adapters were found for '127.0.0.1:8080/api/v1/configmaps'</status>
+<status status="FAIL" starttime="20171114 16:01:07.822" endtime="20171114 16:01:07.829" critical="yes">InvalidSchema: No connection adapters were found for '127.0.0.1:8080/api/v1/configmaps'</status>
 </test>
 <kw name="Delete All Sessions" library="RequestsLibrary" type="teardown">
 <doc>Removes all the session objects</doc>
-<msg timestamp="20171114 15:39:21.196" level="INFO">Delete All Sessions</msg>
-<status status="PASS" starttime="20171114 15:39:21.196" endtime="20171114 15:39:21.196"></status>
+<msg timestamp="20171114 16:01:07.830" level="INFO">Delete All Sessions</msg>
+<status status="PASS" starttime="20171114 16:01:07.829" endtime="20171114 16:01:07.830"></status>
 </kw>
 <doc>REST kubernetes.</doc>
-<status status="FAIL" starttime="20171114 15:39:20.973" endtime="20171114 15:39:21.197"></status>
+<status status="FAIL" starttime="20171114 16:01:07.610" endtime="20171114 16:01:07.830"></status>
 </suite>
 <statistics>
 <total>
