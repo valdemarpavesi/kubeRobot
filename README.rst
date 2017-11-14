@@ -40,4 +40,4 @@ Reports
 -------
 
 
-`report.html <https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/report/report.htm>`_,
+`report.html <https://github.com/valdemarpavesi/kubeRobot/blob/master/report/report.html>`_
