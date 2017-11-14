@@ -43,7 +43,7 @@ First testcase
 Reports
 -------
 
-`report.html <https://cdn.rawgit.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
+`report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
 
 
 Requirements
