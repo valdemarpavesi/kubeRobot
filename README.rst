@@ -2,7 +2,7 @@ kubeRobot
 ===============
 
 
-.. image::https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png
+.. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png
 
 .. contents::
    :local:
