@@ -1,6 +1,6 @@
 # kubeRobot
 
-[ ![](kubeRobot/kuberobot.png)]
+[!kubeRobot/kuberobot.png]
 
 test kubernetes api by robot
 
