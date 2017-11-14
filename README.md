@@ -8,9 +8,14 @@ https://kubernetes.io/
 
 http://robotframework.org/
 
-# first testcase
+Installation
+------------
 
-.. code::[root@tripleolab kuberobot]# robot kuberobot.robot
+first testcase
+------------
+
+.. code:kubeRobot
+# robot kuberobot.robot
 ==============================================================================
 Kuberobot :: REST kubernetes.
 ==============================================================================
@@ -24,5 +29,5 @@ Kuberobot :: REST kubernetes.                                         | FAIL |
 Output:  /home/kuberobot/output.xml
 Log:     /home/kuberobot/log.html
 Report:  /home/kuberobot/report.html
-[root@tripleolab kuberobot]#
+#
 
