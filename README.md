@@ -1,25 +1,16 @@
 # kubeRobot
 
-
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png)
-=======
-![alt text](https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png)
->>>>>>> 182e482d10a8472cde1f6eab4220121b2ff0c79b
-
 
 test kubernetes api by robot
-
 
 https://kubernetes.io/
 
 http://robotframework.org/
 
-
 # first testcase
 
-
-[root@tripleolab kuberobot]# robot kuberobot.robot
+.. code::[root@tripleolab kuberobot]# robot kuberobot.robot
 ==============================================================================
 Kuberobot :: REST kubernetes.
 ==============================================================================
