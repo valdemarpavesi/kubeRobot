@@ -18,7 +18,8 @@ http://robotframework.org/
 first testcase
 --------------
 
-.. code::kubeRobot
+.. code:: kubeRobot
+
 	# robot kuberobot.robot
 	==============================================================================
 	Kuberobot :: REST kubernetes.
@@ -34,4 +35,7 @@ first testcase
 	Log:     /home/kuberobot/log.html
 	Report:  /home/kuberobot/report.html
 	#
+
+Reports
+-------
 
