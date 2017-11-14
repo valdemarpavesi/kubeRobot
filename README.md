@@ -1,6 +1,5 @@
 # kubeRobot
 
-[ ![](https://github.com/valdemarpavesi/kubeRobot/master/kuberobot.png)]
 
 ![alt text](https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/kuberobot.png)
 
