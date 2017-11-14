@@ -40,3 +40,6 @@ Reports
 -------
 
 <https://github.com/valdemarpavesi/kubeRobot/blob/master/report/report.html>
+
+- `Docs
+  <https://github.com/valdemarpavesi/kubeRobot/blob/master/report/report.html>`_
