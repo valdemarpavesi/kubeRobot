@@ -45,10 +45,10 @@ Reports
 Requirements
 ------------
 
-`read api docs <https://github.com/kubernetes/kubernetes/tree/master/docs/api-reference>`_
+	- `read api docs <https://github.com/kubernetes/kubernetes/tree/master/docs/api-reference>`_
 
-build api testcases
+	- build api testcases
 
-execute
+	- execute
 
-generate report
+	- generate report
