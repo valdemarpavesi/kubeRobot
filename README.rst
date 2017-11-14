@@ -15,7 +15,7 @@ https://kubernetes.io/
 http://robotframework.org/
 
 
-first testcase
+First testcase
 --------------
 
 .. code:: kubeRobot
@@ -39,5 +39,16 @@ first testcase
 Reports
 -------
 
-
 `report.html <https://cdn.rawgit.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
+
+
+Requirements
+------------
+
+`read api docs <https://github.com/kubernetes/kubernetes/tree/master/docs/api-reference>`_
+
+build api testcases
+
+execute
+
+generate report
