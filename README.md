@@ -1,7 +1,7 @@
 # kubeRobot
 
 
-![alt text](https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/kuberobot.png)
+![](https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/kuberobot.png)
 
 
 test kubernetes api by robot
