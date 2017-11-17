@@ -4,19 +4,19 @@
 #
 ##################################################################################################
 *** settings ***
-Documentation     REST kubernetes.
-Library           Collections
-Library           RequestsLibrary
-Library           OperatingSystem
-Library           String
+Documentation   REST API kubernetes.
+Library         Collections
+Library         RequestsLibrary
+Library         OperatingSystem
+Library         String
 Suite Setup
-Suite Teardown		Delete All Sessions
+Suite Teardown	Delete All Sessions
 
 ################################################################################################
 *** Variables ***
 ${API_ENDPOINT}	http://127.0.0.1:8080
 
-${DATA}	 { "kind": "Service", "apiVersion": "v1", "metadata": { "name": "nginx-service", "namespace": "default", "labels": {"name": "nginx"} }, "spec": { "ports": [{"port": 80}], "selector": {"name": "nginx"} } }
+${DATA}	{ "kind": "Service", "apiVersion": "v1", "metadata": { "name": "nginx-service", "namespace": "default", "labels": {"name": "nginx"} }, "spec": { "ports": [{"port": 80}], "selector": {"name": "nginx"} } }
 
 ${MYPOD}	{"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx","namespace":"default","labels":{ "name": "nginx" } }, "spec": { "containers": [{ "name": "nginx", "image": "nginx","ports": [{"containerPort": 80}], "resources": { "limits": { "memory": "128Mi", "cpu": "500m" }}}]}}
 

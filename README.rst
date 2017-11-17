@@ -40,7 +40,8 @@ First testcase
 
 .. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/helloworld/passed.png
 
- First pod created by our kubeRobot:
+First pod created
+-----------------
 
 .. code:: kubeRobot
 
