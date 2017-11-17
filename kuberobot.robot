@@ -54,7 +54,7 @@ runTestAPIpost
 ################################################################################################
 *** test cases ***
 
-Get api v1 
+Get api v1 and Execute to kubernetes 
     [Documentation]  api v1
     Create Session	kubernetes      ${API_ENDPOINT}
     ${resp}=    Get Request     kubernetes      /api/v1
