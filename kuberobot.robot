@@ -16,9 +16,9 @@ Suite Teardown	Delete All Sessions
 *** Variables ***
 ${API_ENDPOINT}	http://127.0.0.1:8080
 
-${DATA}	{ "kind": "Service", "apiVersion": "v1", "metadata": { "name": "nginx-service", "namespace": "default", "labels": {"name": "nginx"} }, "spec": { "ports": [{"port": 80}], "selector": {"name": "nginx"} } }
+${nginx-service.json}		{"kind":"Service","apiVersion":"v1","metadata":{"name":"nginx-service","namespace":"default","labels": {"name":"nginx"} },"spec":{"ports":[{"port": 80}],"selector":{"name":"nginx"}}}
 
-${MYPOD}	{"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx","namespace":"default","labels":{ "name": "nginx" } }, "spec": { "containers": [{ "name": "nginx", "image": "nginx","ports": [{"containerPort": 80}], "resources": { "limits": { "memory": "128Mi", "cpu": "500m" }}}]}}
+${nginx-pod.json}	 {"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx","namespace":"default","labels":{ "name": "nginx" } }, "spec": { "containers": [{"name":"nginx","image":"nginx","ports":[{"containerPort": 80}],"resources": {"limits":{"memory":"128Mi", "cpu": "500m"}}}]}}
 
 
 ################################################################################################
@@ -45,9 +45,8 @@ runTestAPIpost
    [Arguments]  ${apiName}
    Create Session      kubernetes      ${API_ENDPOINT}
    &{headers}=  Create Dictionary  Content-Type=application/json
-   ${resp}=  Post Request  kubernetes	/api/v1/${apiName}/default/pods  data=${MYPOD}  headers=${headers}
+   ${resp}=  Post Request  kubernetes	/api/v1/${apiName}/default/pods  data=${nginx-pod.json}  headers=${headers}
    #Should Be Equal As Strings  ${resp.status_code}  200
-   Log to console       gugu
 
 
 
