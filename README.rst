@@ -44,7 +44,7 @@ Reports
 -------
 
         - `hello world report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/helloworld/report.html>`_
-	- `regression tests report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/helloworld/report.html>`_
+	- `regression tests report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
 
 
 Requirements
