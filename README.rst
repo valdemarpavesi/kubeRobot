@@ -40,6 +40,17 @@ First testcase
 
 .. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/helloworld/passed.png
 
+ First pod created by our kubeRobot:
+
+.. code:: kubeRobot
+
+	# kubectl get pods
+	NAME                              READY     STATUS              RESTARTS   AGE
+	hello-minikube-5d89cbb865-znjsc   1/1       Running             0          3d
+	nginx                             0/1       ContainerCreating   0          11s
+        #	
+
+
 Reports
 -------
 

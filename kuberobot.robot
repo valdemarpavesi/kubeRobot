@@ -16,21 +16,39 @@ Suite Teardown		Delete All Sessions
 *** Variables ***
 ${API_ENDPOINT}	http://127.0.0.1:8080
 
+${DATA}	 { "kind": "Service", "apiVersion": "v1", "metadata": { "name": "nginx-service", "namespace": "default", "labels": {"name": "nginx"} }, "spec": { "ports": [{"port": 80}], "selector": {"name": "nginx"} } }
+
+${MYPOD}	{"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx","namespace":"default","labels":{ "name": "nginx" } }, "spec": { "containers": [{ "name": "nginx", "image": "nginx","ports": [{"containerPort": 80}], "resources": { "limits": { "memory": "128Mi", "cpu": "500m" }}}]}}
+
+
 ################################################################################################
 *** Keywords ***
 GetListofVerbs
     [Arguments]	${apiVerbs}	${apiName}	
-    :FOR    ${verb}    IN    @{apiVerbs}
-    \	 runTest	${apiName}
+    :FOR    ${apiverb}    IN    @{apiVerbs}
+    \	Run Keyword If  '${apiverb}' == 'get'   runTestAPIget	${apiName} 
+    \   Run Keyword If  '${apiverb}' == 'create' and '${apiName}' == 'namespaces'   runTestAPIpost   ${apiName}
     
 
 
-runTest
+runTestAPIget
    [Arguments]	${apiName}
    #Log to console	 ${apiName}
    Create Session      kubernetes      ${API_ENDPOINT}
    ${resp}=    Get Request     kubernetes      /api/v1/${apiName}
    #Should Be Equal As Strings  ${resp.status_code}     200
+   ${json} =  Set Variable  ${resp.json()}
+   Log  ${json}
+   [Tags]	${apiName}
+
+runTestAPIpost
+   [Arguments]  ${apiName}
+   Create Session      kubernetes      ${API_ENDPOINT}
+   &{headers}=  Create Dictionary  Content-Type=application/json
+   ${resp}=  Post Request  kubernetes	/api/v1/${apiName}/default/pods  data=${MYPOD}  headers=${headers}
+   #Should Be Equal As Strings  ${resp.status_code}  200
+   Log to console       gugu
+
 
 
 ################################################################################################
