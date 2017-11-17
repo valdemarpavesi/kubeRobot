@@ -45,11 +45,20 @@ First pod created,nginx
 
 .. code:: kubeRobot
 
+
 	# kubectl get pods
 	NAME                              READY     STATUS              RESTARTS   AGE
 	hello-minikube-5d89cbb865-znjsc   1/1       Running             0          3d
 	nginx                             0/1       ContainerCreating   0          11s
         #	
+
+        # kubectl get svc
+	NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)          AGE
+	hello-minikube   NodePort    10.0.0.180   <none>        8081:32321/TCP   3d
+	kubernetes       ClusterIP   10.0.0.1     <none>        443/TCP          3d
+	nginx-service    ClusterIP   10.0.0.53    <none>        80/TCP           13s
+	#
+
 
 
 Reports

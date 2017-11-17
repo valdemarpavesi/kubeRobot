@@ -1,8 +1,8 @@
-##################################################################################################
+################################################################################################
 #    kuberobot REST test by Robot-framework
 #    nov 2017
 #
-##################################################################################################
+################################################################################################
 *** settings ***
 Documentation   REST API kubernetes.
 Library         Collections
@@ -23,7 +23,7 @@ ${nginx-pod.json}	 {"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx","n
 
 ################################################################################################
 *** Keywords ***
-GetListofVerbs
+GetListofapiVerbs
     [Arguments]	${apiVerbs}	${apiName}	
     :FOR    ${apiverb}    IN    @{apiVerbs}
     \	Run Keyword If  '${apiverb}' == 'get'   runTestAPIget	${apiName} 
@@ -46,6 +46,7 @@ runTestAPIpost
    Create Session      kubernetes      ${API_ENDPOINT}
    &{headers}=  Create Dictionary  Content-Type=application/json
    ${resp}=  Post Request  kubernetes	/api/v1/${apiName}/default/pods  data=${nginx-pod.json}  headers=${headers}
+   ${resp}=  Post Request  kubernetes   /api/v1/${apiName}/default/services  data=${nginx-service.json}  headers=${headers}
    #Should Be Equal As Strings  ${resp.status_code}  200
 
 
@@ -71,7 +72,7 @@ Get api v1
     \  ${apiVerbs} =  Get From Dictionary  ${apiDict}  verbs
     \  Log List	 ${apiVerbs}
     # \  Log to console   ${apiName}  
-    \  GetListofVerbs	${apiVerbs}	${apiName}
+    \  GetListofapiVerbs	${apiVerbs}	${apiName}
 
     
 
