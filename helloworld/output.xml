@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.2 on linux)" generated="20171114 16:36:03.171">
+<suite id="s1" name="Kuberobot" source="/home/kuberobot/kuberobot.robot">
+<test id="s1-t1" name="Test api v1">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>kubernetes</arg>
+<arg>${API_ENDPOINT}</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.386" level="INFO">Creating Session using : alias=kubernetes, url=http://127.0.0.1:8080, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20171114 16:36:03.385" endtime="20171114 16:36:03.386"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>kubernetes</arg>
+<arg>/api/v1</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20171114 16:36:03.393" level="INFO">Get Request using : alias=kubernetes, uri=/api/v1, headers=None json=None</msg>
+<msg timestamp="20171114 16:36:03.394" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20171114 16:36:03.386" endtime="20171114 16:36:03.394"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.395" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20171114 16:36:03.394" endtime="20171114 16:36:03.395"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${resp.json()}</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.396" level="INFO">{'kind': 'APIResourceList', 'groupVersion': 'v1', 'resources': [{'name': 'bindings', 'singularName': '', 'namespaced': True, 'kind': 'Binding', 'verbs': ['create']}, {'name': 'componentstatuses', 'singularName': '', 'namespaced': False, 'kind': 'ComponentStatus', 'verbs': ['get', 'list'], 'shortNames': ['cs']}, {'name': 'configmaps', 'singularName': '', 'namespaced': True, 'kind': 'ConfigMap', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['cm']}, {'name': 'endpoints', 'singularName': '', 'namespaced': True, 'kind': 'Endpoints', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['ep']}, {'name': 'events', 'singularName': '', 'namespaced': True, 'kind': 'Event', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['ev']}, {'name': 'limitranges', 'singularName': '', 'namespaced': True, 'kind': 'LimitRange', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['limits']}, {'name': 'namespaces', 'singularName': '', 'namespaced': False, 'kind': 'Namespace', 'verbs': ['create', 'delete', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['ns']}, {'name': 'namespaces/finalize', 'singularName': '', 'namespaced': False, 'kind': 'Namespace', 'verbs': ['update']}, {'name': 'namespaces/status', 'singularName': '', 'namespaced': False, 'kind': 'Namespace', 'verbs': ['get', 'patch', 'update']}, {'name': 'nodes', 'singularName': '', 'namespaced': False, 'kind': 'Node', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'proxy', 'update', 'watch'], 'shortNames': ['no']}, {'name': 'nodes/proxy', 'singularName': '', 'namespaced': False, 'kind': 'Node', 'verbs': []}, {'name': 'nodes/status', 'singularName': '', 'namespaced': False, 'kind': 'Node', 'verbs': ['get', 'patch', 'update']}, {'name': 'persistentvolumeclaims', 'singularName': '', 'namespaced': True, 'kind': 'PersistentVolumeClaim', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['pvc']}, {'name': 'persistentvolumeclaims/status', 'singularName': '', 'namespaced': True, 'kind': 'PersistentVolumeClaim', 'verbs': ['get', 'patch', 'update']}, {'name': 'persistentvolumes', 'singularName': '', 'namespaced': False, 'kind': 'PersistentVolume', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['pv']}, {'name': 'persistentvolumes/status', 'singularName': '', 'namespaced': False, 'kind': 'PersistentVolume', 'verbs': ['get', 'patch', 'update']}, {'name': 'pods', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'proxy', 'update', 'watch'], 'shortNames': ['po'], 'categories': ['all']}, {'name': 'pods/attach', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': []}, {'name': 'pods/binding', 'singularName': '', 'namespaced': True, 'kind': 'Binding', 'verbs': ['create']}, {'name': 'pods/eviction', 'singularName': '', 'namespaced': True, 'kind': 'Eviction', 'verbs': ['create']}, {'name': 'pods/exec', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': []}, {'name': 'pods/log', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': ['get']}, {'name': 'pods/portforward', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': []}, {'name': 'pods/proxy', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': []}, {'name': 'pods/status', 'singularName': '', 'namespaced': True, 'kind': 'Pod', 'verbs': ['get', 'patch', 'update']}, {'name': 'podtemplates', 'singularName': '', 'namespaced': True, 'kind': 'PodTemplate', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch']}, {'name': 'replicationcontrollers', 'singularName': '', 'namespaced': True, 'kind': 'ReplicationController', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['rc'], 'categories': ['all']}, {'name': 'replicationcontrollers/scale', 'singularName': '', 'namespaced': True, 'group': 'autoscaling', 'version': 'v1', 'kind': 'Scale', 'verbs': ['get', 'patch', 'update']}, {'name': 'replicationcontrollers/status', 'singularName': '', 'namespaced': True, 'kind': 'ReplicationController', 'verbs': ['get', 'patch', 'update']}, {'name': 'resourcequotas', 'singularName': '', 'namespaced': True, 'kind': 'ResourceQuota', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['quota']}, {'name': 'resourcequotas/status', 'singularName': '', 'namespaced': True, 'kind': 'ResourceQuota', 'verbs': ['get', 'patch', 'update']}, {'name': 'secrets', 'singularName': '', 'namespaced': True, 'kind': 'Secret', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch']}, {'name': 'serviceaccounts', 'singularName': '', 'namespaced': True, 'kind': 'ServiceAccount', 'verbs': ['create', 'delete', 'deletecollection', 'get', 'list', 'patch', 'update', 'watch'], 'shortNames': ['sa']}, {'name': 'services', 'singularName': '', 'namespaced': True, 'kind': 'Service', 'verbs': ['create', 'delete', 'get', 'list', 'patch', 'proxy', 'update', 'watch'], 'shortNames': ['svc'], 'categories': ['all']}, {'name': 'services/proxy', 'singularName': '', 'namespaced': True, 'kind': 'Service', 'verbs': []}, {'name': 'services/status', 'singularName': '', 'namespaced': True, 'kind': 'Service', 'verbs': ['get', 'patch', 'update']}]}</msg>
+<status status="PASS" starttime="20171114 16:36:03.395" endtime="20171114 16:36:03.396"></status>
+</kw>
+<doc>api v1</doc>
+<status status="PASS" starttime="20171114 16:36:03.385" endtime="20171114 16:36:03.397" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test api v1 configmaps">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>kubernetes</arg>
+<arg>${API_ENDPOINT}</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.398" level="INFO">Creating Session using : alias=kubernetes, url=http://127.0.0.1:8080, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20171114 16:36:03.398" endtime="20171114 16:36:03.399"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>kubernetes</arg>
+<arg>/api/v1/configmaps</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20171114 16:36:03.405" level="INFO">Get Request using : alias=kubernetes, uri=/api/v1/configmaps, headers=None json=None</msg>
+<msg timestamp="20171114 16:36:03.405" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20171114 16:36:03.399" endtime="20171114 16:36:03.405"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.406" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20171114 16:36:03.405" endtime="20171114 16:36:03.406"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${resp.json()}</arg>
+</arguments>
+<msg timestamp="20171114 16:36:03.407" level="INFO">{'kind': 'ConfigMapList', 'apiVersion': 'v1', 'metadata': {'selfLink': '/api/v1/configmaps', 'resourceVersion': '18937'}, 'items': [{'metadata': {'name': 'extension-apiserver-authentication', 'namespace': 'kube-system', 'selfLink': '/api/v1/namespaces/kube-system/configmaps/extension-apiserver-authentication', 'uid': 'b0563f3d-c960-11e7-b342-5254002b24c6', 'resourceVersion': '15', 'creationTimestamp': '2017-11-14T17:24:37Z'}, 'data': {'client-ca-file': '-----BEGIN CERTIFICATE-----\nMIIC5zCCAc+gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p\na3ViZUNBMB4XDTE3MTAzMDIwNDA1NFoXDTI3MTAyODIwNDA1NFowFTETMBEGA1UE\nAxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKHo\nf1KZ2wXEeSegPBrwFVtEK/bKf15GYJblub1rhTY+legYv/iZjZ2/HpHu4qQauNRx\nEwuepxANGTQeC/KkFOlZ4LjPxXzMZXnYlIMmjcdq2glurF4cIOgbCyVFb6Bat5Ib\nbOX48Ov/KtHlyZ7wcaG7B6puKn4nHIhHULfa3IH77YL1I1u/UOOLfVzlGChjn8dY\nQ+++F7hEJztNzu/66RR6xaaohi0c2e8TvvYb9W2987HJD/AQoAXdUVR6lVOMUShG\n7EBqGr+Ov8Hc/k/WRMDaRK1AtVanaTiDhRtR3iI2ZaY/D1Yz858EZos2r3TUA+Jh\niZsmefNJwG5ZRnn6Wp0CAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3\nDQEBCwUAA4IBAQAfDUZW+WG+lFup/ifvsJHyJo6hlZ6vz+A46JHcQnh//iMjAWpO\nv7Lj4SdEGYrxfWqFpDw3CxdUizR7OCWNyd5uR9YJz3+uGIn9p4BN8LltLbOyY0Ad\nhvrYqo1DWldXM3n3xsO9b4hUYopJkk29RGLEog8auDgVfJZuXXbru/OE8kMMdKUG\nphJmX3+BUS83J1JHuH8R0G1qVl4hH3J+CCUDH5oiorkdwg3/fB/Lm6blBWxy5Mxg\nQrXYALmzFyiZxRABq/13nVp0sh57ec/JR6hTj/450Xn+O9/HgOeJBvKWC03uCK9f\nDDPzu3DBR6StbrJXVUnRROHGqANxV2bknRcc\n-----END CERTIFICATE-----\n', 'requestheader-allowed-names': '[]', 'requestheader-client-ca-file': '-----BEGIN CERTIFICATE-----\nMIIC7TCCAdWgAwIBAgIBATANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDEw1wcm94\neUNsaWVudENBMB4XDTE3MTAzMDIwNDA1NFoXDTI3MTAyODIwNDA1NFowGDEWMBQG\nA1UEAxMNcHJveHlDbGllbnRDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBAJtgvzrsXrLabJejaJ86icaurNcO0bfVxZTgHVLUUhogCpl5ArmuhcLAk/96\n47KLT1+WprVaDQribXvaAmhElWYLG/rP+2g34EEl/HOflB4Tf1wSTjod01aWh+WA\nhJLC+dVIUqA6iN0s5h2ZbNvtcb5Kc0PEPi5n8x4Opv2ywNTLycQZtfTEMGzGxkSp\n1MKnx3bdxOManb+zrfDxoecsYSvviqYHwtz+TGhczOTuSXU4qrL3lkDglcKprmhe\nFUN/Vlx+A1rhKzp4TyOwj1IZ9Sh/5A+I1kwL441mXOLnJ/P2lIHx0pkA2QUukpY1\nFoG6adIQhWKg9m7qtC2MO4Mix4MCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMB0G\nA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MA0G\nCSqGSIb3DQEBCwUAA4IBAQBN31Lt51HALSyrjPT8fX821JBn807d/DYhqMpSW33W\n0bXcbxUVZnkXy+p6u9/GE235dPdO9x/3VlIBjdmEkX6FyWtENsVB72XcDfBkCch7\nB4pASG5gMnywsc+5jxW1scen1gWhx3/ofN+UcaIiB7n73CJWS7DWhbKkk4X2GmkW\nCv4Xg1/2l2nIdTnz5ztGDssDwVm0rxQhRQAuX+PmSfxVhQ38s8TF/tsSWOW7EKsu\nF2V2eCwd1z7YmQKu7COeGTEsheWfws0pBoffFf1csVLvIh8vn+QrwaVhQFoNpch1\nsijrrLY/ei1yZQTYbiTvHUai8ENF9U8j9APqLJ+ANE5a\n-----END CERTIFICATE-----\n', 'requestheader-extra-headers-prefix': '["X-Remote-Extra-"]', 'requestheader-group-headers': '["X-Remote-Group"]', 'requestheader-username-headers': '["X-Remote-User"]'}}, {'metadata': {'name': 'ingress-controller-leader-nginx', 'namespace': 'kube-system', 'selfLink': '/api/v1/namespaces/kube-system/configmaps/ingress-controller-leader-nginx', 'uid': 'd9af41ef-c960-11e7-b342-5254002b24c6', 'resourceVersion': '18933', 'creationTimestamp': '2017-11-14T17:25:46Z', 'annotations': {'control-plane.alpha.kubernetes.io/leader': '{"holderIdentity":"nginx-ingress-controller-s8gnw","leaseDurationSeconds":30,"acquireTime":"2017-11-14T17:25:46Z","renewTime":"2017-11-14T21:35:58Z","leaderTransitions":0}'}}}, {'metadata': {'name': 'kube-dns', 'namespace': 'kube-system', 'selfLink': '/api/v1/namespaces/kube-system/configmaps/kube-dns', 'uid': 'b7054a29-c960-11e7-b342-5254002b24c6', 'resourceVersion': '78', 'creationTimestamp': '2017-11-14T17:24:48Z', 'labels': {'addonmanager.kubernetes.io/mode': 'EnsureExists'}}}, {'metadata': {'name': 'nginx-load-balancer-conf', 'namespace': 'kube-system', 'selfLink': '/api/v1/namespaces/kube-system/configmaps/nginx-load-balancer-conf', 'uid': 'b7ccbc2f-c960-11e7-b342-5254002b24c6', 'resourceVersion': '93', 'creationTimestamp': '2017-11-14T17:24:49Z', 'labels': {'addonmanager.kubernetes.io/mode': 'Reconcile'}, 'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{"apiVersion":"v1","data":{"map-hash-bucket-size":"128"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile"},"name":"nginx-load-balancer-conf","namespace":"kube-system"}}\n'}}, 'data': {'map-hash-bucket-size': '128'}}]}</msg>
+<status status="PASS" starttime="20171114 16:36:03.406" endtime="20171114 16:36:03.407"></status>
+</kw>
+<doc>configmaps</doc>
+<status status="PASS" starttime="20171114 16:36:03.397" endtime="20171114 16:36:03.407" critical="yes"></status>
+</test>
+<kw name="Delete All Sessions" library="RequestsLibrary" type="teardown">
+<doc>Removes all the session objects</doc>
+<msg timestamp="20171114 16:36:03.408" level="INFO">Delete All Sessions</msg>
+<status status="PASS" starttime="20171114 16:36:03.408" endtime="20171114 16:36:03.408"></status>
+</kw>
+<doc>REST kubernetes.</doc>
+<status status="PASS" starttime="20171114 16:36:03.173" endtime="20171114 16:36:03.408"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Kuberobot">Kuberobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
