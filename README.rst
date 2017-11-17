@@ -8,11 +8,11 @@ kubeRobot
    :local:
 
 
-test kubernetes api by robot
+ test kubernetes api by robot
 
-https://kubernetes.io/
+        - https://kubernetes.io/
 
-http://robotframework.org/
+        - http://robotframework.org/
 
 
 First testcase
@@ -38,12 +38,13 @@ First testcase
 	==============================================================================
 	#
 
-.. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/passed.png
+.. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/helloworld/passed.png
 
 Reports
 -------
 
-`report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/report/report.html>`_
+        - `hello world report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/helloworld/report.html>`_
+	- `regression tests report.html <https://rawgit.com/valdemarpavesi/kubeRobot/master/helloworld/report.html>`_
 
 
 Requirements
@@ -61,6 +62,14 @@ Requirements
 Following kubernetes workflow
 -----------------------------
 
-tests will be executed on branch myfeature
+ tests will be executed on branch myfeature
 
 .. image:: https://github.com/kubernetes/community/raw/master/contributors/devel/git_workflow.png
+
+
+
+History
+-------
+
+ iterate over json get api/v1
+.. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/api_in_progress.png
