@@ -90,7 +90,7 @@ Following kubernetes workflow
 Jenkins integration
 -------------------
 	- `plugin <https://wiki.jenkins.io/display/JENKINS/Robot+Framework+Plugin>`_
-
+        .. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/jenkins.png
 
 
 Vscode Extension robotframework
