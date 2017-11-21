@@ -87,6 +87,15 @@ Following kubernetes workflow
 
 .. image:: https://github.com/kubernetes/community/raw/master/contributors/devel/git_workflow.png
 
+Jenkins integration
+-------------------
+	- `plugin <https://wiki.jenkins.io/display/JENKINS/Robot+Framework+Plugin>`_
+
+
+
+Vscode Extension robotframework
+------------------------------
+.. image:: https://raw.githubusercontent.com/valdemarpavesi/kubeRobot/master/docs/vscode.png
 
 
 History
